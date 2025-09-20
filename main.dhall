@@ -1,15 +1,25 @@
-let concat = https://raw.githubusercontent.com/dhall-lang/dhall-lang/v23.1.0/Prelude/Text/concat.dhall
-let map = https://raw.githubusercontent.com/dhall-lang/dhall-lang/v23.1.0/Prelude/List/map.dhall
-let User = { name : Text, age : Natural }
+let Role: Type = < Teacher | TA | Student >
 
-let users = [
-    { name = "Alice"}
-  , { name = "Bob"}
-  ]
+let User : Type =
+      { name : Text
+      , role : Role
+      , email : Text
+      }
 
-let formatUser = \(user : User) -> "${user.name}"
+let makeUser : Text -> Role -> User =
+      \(name : Text) ->
+      \(role : Role) ->
+        { name = name
+        , role = role
+        , email = "${name}@mail.com"
+        }
 
-let formattedUsers = map User Text formatUser users
+let users: List User =
+    [ makeUser "Larissa" Role.Teacher
+    , makeUser "Eric" Role.TA
+    , makeUser "Sofia" Role.TA
+    , makeUser "David" Role.Student
+    , makeUser "Herdi" Role.Student
+    ]
 
-in "name" ++ (concat formattedUsers)
-
+in {users}
