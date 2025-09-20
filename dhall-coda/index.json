@@ -20,6 +20,13 @@
     ],
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {"file": "main.dhall", "target": "~/tutorial-files"},
+        {"file": "csv.dhall", "target": "~/tutorial-files"},
+        {"file": "types.dhall", "target": "~/tutorial-files"}
+      ]
     }
   },
   "backend": {
