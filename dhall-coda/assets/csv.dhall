@@ -14,7 +14,7 @@ let toCSV: List types.User -> Text =
   -- Remember to call `showConstructor` on the roles for them
   -- to become `Text`.
   let formatRow: types.User -> Text =
-    \(user: types.User) -> "<FORMAT USER HERE>"
+    \(user: types.User) -> "<FORMAT USER HERE>\n"
   in
   \(users: List types.User) ->
     columnNames ++ "\n" ++
