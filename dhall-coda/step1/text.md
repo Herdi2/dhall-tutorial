@@ -6,7 +6,8 @@ Instead of rewriting anything, we simply use our Dhall program to generate YAML 
 
 To do this, instead of using `~/bin/dhall-to-json`, simply use `~/bin/dhall-to-yaml`.
 ```
-~/bin/dhall-to-yaml --file ~/main.dhall
+~/bin/dhall-to-yaml --file ~/tutorial-files/main.dhall --output users.yaml
+cat users.yaml
 ```{{exec}}
 
 See, that was pretty easy!
@@ -24,15 +25,21 @@ name,role,email
 Herdi,Student,herdi@mail.com
 ```{{}}
 
-Now, go and edit the code in `csv.dhall` and add support for CSV files.
-Note that most of it is filled in, you just need to define two things:
+A code skeleton is prepared at `~/tutorial-files/csv.dhall`.
+You just need to fill in two places to make it work:
 
 1. The first row describing our columns
 2. How each `User` is outputted
 
+Go do that now:
+```
+vim ~/tutorial-files/csv.dhall
+```{{exec}}
+
 When you think your solution is correct, use the dhall interpreter and output it to a new file called `users.csv` like this:
 ```
-~/bin/dhall text --file ~/csv.dhall --output users.csv
+~/bin/dhall text --file ~/tutorial-files/csv.dhall --output users.csv
+cat users.csv
 ```{{exec}}
 
 Note: The verification script for this step checks that you have a valid YAML and CSV file with the original users.

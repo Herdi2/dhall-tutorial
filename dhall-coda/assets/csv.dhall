@@ -9,12 +9,12 @@ let types = ./types.dhall
 -- Take a list of users and return it in CSV format
 let toCSV: List types.User -> Text = 
   -- TODO: Define the column names here
-  let columnNames: Text = "name,role,email"
+  let columnNames: Text = "<DEFINE COLUMNS HERE>"
   -- TODO: Define how user attributes should be printed.
   -- Remember to call `showConstructor` on the roles for them
   -- to become `Text`.
   let formatRow: types.User -> Text =
-    \(user: types.User) -> "${user.name},${showConstructor user.role},${user.email}\n"
+    \(user: types.User) -> "<FORMAT USER HERE>"
   in
   \(users: List types.User) ->
     columnNames ++ "\n" ++
