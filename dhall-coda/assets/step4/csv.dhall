@@ -2,22 +2,28 @@ let map = https://raw.githubusercontent.com/dhall-lang/dhall-lang/v23.1.0/Prelud
 
 let concat = https://raw.githubusercontent.com/dhall-lang/dhall-lang/v23.1.0/Prelude/Text/concat.dhall
 
-let main = ./users.dhall
+let Role = < Teacher | TA | Student >
 
-let types = ./types.dhall
+let User = 
+  { name : Text
+  , pullRequestsMade : Natural
+  , role : Role 
+  }
+
+let userInfo = ./info.dhall
 
 -- Take a list of users and return it in CSV format
-let toCSV: List types.User -> Text = 
+let toCSV: List User -> Text = 
   -- TODO: Define the column names here
-  let columnNames: Text = "name,role,email"
+  let columnNames: Text = "<COLUMNS HERE>"
   -- TODO: Define how user attributes should be printed.
   -- Remember to call `showConstructor` on the roles for them
   -- to become `Text`.
-  let formatRow: types.User -> Text =
-    \(user: types.User) -> "${user.name},${showConstructor user.role},${user.email}\n"
+  let formatRow: User -> Text =
+    \(user: User) -> "<FORMATTED USER HERE>\n"
   in
-  \(users: List types.User) ->
+  \(users: List User) ->
     columnNames ++ "\n" ++
-    concat (map types.User Text formatRow users)
+    concat (map User Text formatRow users)
 
-in toCSV main
+in toCSV userInfo

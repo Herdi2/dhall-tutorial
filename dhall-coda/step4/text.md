@@ -45,7 +45,7 @@ vim csv.dhall
 When you think your solution is correct, use the dhall interpreter and output it to a new file called `users.csv` like this:
 ```
 dhall text --file csv.dhall --output users.csv
-cat users.csv
+batcat users.csv
 ```{{exec}}
 By using the `text`{{}} option for Dhall, we are telling the interpreter to output plain text, which allows us to pass this into a new file without any Dhall langauge expressions.
 
