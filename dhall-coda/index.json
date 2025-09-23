@@ -9,24 +9,19 @@
     "steps": [
       {
         "title": "Migrate to YAML",
-        "text": "step1/text.md",
-        "verify": "step1/verify.sh"
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh",
+        "background": "step4/background.sh"
       },
       {
-        "title": "Canonical forms",
-        "text": "step2/text.md",
-        "verify": "step2/verify.sh"
+        "title": "Translating back to Dhall",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh",
+        "background": "step5/background.sh"
       }
     ],
     "finish": {
       "text": "finish.md"
-    },
-    "assets": {
-      "host01": [
-        {"file": "main.dhall", "target": "~/tutorial-files"},
-        {"file": "csv.dhall", "target": "~/tutorial-files"},
-        {"file": "types.dhall", "target": "~/tutorial-files"}
-      ]
     }
   },
   "backend": {

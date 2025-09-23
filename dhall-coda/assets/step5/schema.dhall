@@ -1,9 +1,8 @@
 let Role = < Teacher | TA | Student >
-
 let User = 
   { name: Text
+  , pullRequestsMade: Natural
   , role: Role
-  , email: Text
   }
+in List User
 
-in {Role, User}
