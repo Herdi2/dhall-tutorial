@@ -1,8 +1,14 @@
-# All dhall tools needed
-# Interpreter
-wget https://github.com/dhall-lang/dhall-haskell/releases/download/1.42.2/dhall-1.42.2-x86_64-linux.tar.bz2
-# dhall-to-json, dhall-to-yaml, json-to-dhall
-wget https://github.com/dhall-lang/dhall-haskell/releases/download/1.42.2/dhall-json-1.7.12-x86_64-linux.tar.bz2
-tar --extract --file dhall-1.42.2-x86_64-linux.tar.bz2
-tar --extract --file dhall-json-1.7.12-x86_64-linux.tar.bz2
-rm -r *.bz2 ./share/
+#!/bin/bash
+set -e
+
+# Update package list
+apt-get update -y
+
+# Install dhall
+apt-get install -y dhall
+
+# Install syntax highlighting alternative to cat
+apt-get install -y bat
+
+# Install dhall tools
+curl -L https://github.com/dhall-lang/dhall-haskell/releases/download/1.42.2/dhall-json-1.7.12-x86_64-linux.tar.bz2 | tar xj --strip-components=1 -C /usr/local/bin
