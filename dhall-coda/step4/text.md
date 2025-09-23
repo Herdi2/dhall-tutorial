@@ -9,7 +9,6 @@ This will be demonstrated further in the next example.
 ## Migrating to YAML
 As it turns out, the DevOps course is getting overhauled!
 Instead of keeping track of all users using a JSON configuration file, we want to move to YAML!
-Given that we have a standar template, and values, for our users. We simply use this to generate the YAML!
 
 To do this, instead of using `dhall-to-json`, simply use `dhall-to-yaml`.
 ```
