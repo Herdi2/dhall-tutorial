@@ -12,7 +12,7 @@ Instead of keeping track of all users using a JSON configuration file, we want t
 
 To do this, instead of using `dhall-to-json`, simply use `dhall-to-yaml`.
 ```
-dhall-to-yaml --file users.dhall --output users.yaml
+dhall-to-yaml --file info.dhall --output users.yaml
 batcat users.yaml
 ```{{exec}}
 
