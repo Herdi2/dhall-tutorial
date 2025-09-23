@@ -12,8 +12,8 @@ Instead of keeping track of all users using a JSON configuration file, we want t
 
 To do this, instead of using `dhall-to-json`, simply use `dhall-to-yaml`.
 ```
-dhall-to-yaml --file info.dhall --output users.yaml
-batcat users.yaml
+dhall-to-yaml --file info.dhall --output info.yaml
+batcat info.yaml
 ```{{exec}}
 
 See, that was pretty easy!
@@ -44,8 +44,8 @@ vim csv.dhall
 
 When you think your solution is correct, use the dhall interpreter and output it to a new file called `users.csv` like this:
 ```
-dhall text --file csv.dhall --output users.csv
-batcat users.csv
+dhall text --file csv.dhall --output info.csv
+batcat info.csv
 ```{{exec}}
 By using the `text`{{}} option for Dhall, we are telling the interpreter to output plain text, which allows us to pass this into a new file without any Dhall langauge expressions.
 
