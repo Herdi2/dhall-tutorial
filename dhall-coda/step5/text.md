@@ -22,7 +22,7 @@ The schema specifies the type of the value we wish to read.
 Take a look at the schema for `info.json`:
 ```
 batcat -l haskell Schema.dhall
-```
+```{{execute}}
 It specifies a list of users like before.
 Importantly, take note that we only allow natural numbers (positive or zero) and a set amount of roles.
 Now, let us apply this to our transformation from JSON to Dhall:
