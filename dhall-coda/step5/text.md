@@ -50,8 +50,8 @@ We want to compare two configuration files of different format, JSON and YAML, t
 To do this, we can convert both to Dhall, to get them in the same format.
 Then, we simply compare the two:
 ```
-json-to-dhall ./schema.dhall --file info.json --output info_json.dhall
-yaml-to-dhall ./schema.dhall --file info.yaml --output info_yaml.dhall
+json-to-dhall ./Schema.dhall --file info.json --output info_json.dhall
+yaml-to-dhall ./Schema.dhall --file info.yaml --output info_yaml.dhall
 diff info_json.dhall info_yaml.dhall
 ```{{execute}}
 For those unfamiliar with `diff`, no output means that the files are equivalent!
